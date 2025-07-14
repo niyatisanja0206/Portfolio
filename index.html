@@ -154,8 +154,8 @@
 
     /* Sections */
     section {
-      padding: 8rem 2rem 4rem;
-      max-width: 1200px;
+      padding: 8rem 2rem 1rem;
+      max-width: 1500px;
       margin: 0 auto;
     }
 
@@ -310,7 +310,7 @@
     .about-content {
       max-width: 800px;
       margin: 0 auto;
-      text-align: center;
+      text-align: justify;
     }
 
     .about-text {
@@ -732,41 +732,62 @@
       <nav id="nav">
         <a href="#home">Home</a>
         <a href="#about">About</a>
+        <a href="#education">Education</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
       </nav>
       <div class="mobile-menu" id="mobile-menu">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </div>
     </div>
   </header>
 
-  <section id="home" class="home">
-    <div class="home-content">
-      <div class="profile-image">
-        <img src="https://avatars.githubusercontent.com/u/149999123?s=400&u=855447eca83b580183787002f4c544a3222b9827&v=4" alt="Profile" />
+  <section class="intro-section" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2rem; padding: 5rem 2rem 3rem;">
+    <div class="home" style="flex: 1 1 45%; min-width: 300px; text-align: center;">
+      <div class="home-content">
+        <div class="profile-image">
+          <img src="https://avatars.githubusercontent.com/u/149999123?s=400&u=855447eca83b580183787002f4c544a3222b9827&v=4" alt="Profile" />
+        </div>
+        <h1>Niyati Sanja</h1>
+        <p class="subtitle">AI/ML Engineer & Full Stack Developer</p>
+        <div class="typing-text" id="typing-text">Passionate about creating intelligent solutions...</div>
+        <div class="cta-buttons">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
       </div>
-      <h1>Niyati Sanja</h1>
-      <p class="subtitle">AI/ML Engineer & Full Stack Developer</p>
-      <div class="typing-text" id="typing-text">Passionate about creating intelligent solutions...</div>
-      <div class="cta-buttons">
-        <a href="#projects" class="btn btn-primary">View My Work</a>
-        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+    </div>
+    <div class="about" style="flex: 1 1 45%; min-width: 300px;">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <p class="about-text">
+          I am a dedicated and proactive final year B.Tech Computer Engineering student with a strong foundation in web development and 
+          keen interest in Machine Learning and Artificial Intelligence. I am always enthusiastic to learn new technologies. I am looking for 
+          opportunities to implement my knowledge, and develop myself in a dynamic environment. 
+          I have a passion for building innovative solutions that make a difference. My journey in tech has been driven by curiosity and a desire to solve real-world problems using AI, ML, and full stack development. I enjoy collaborating with diverse teams, taking on challenging projects, and continuously improving my skills. Whether it's developing intelligent web applications, experimenting with new machine learning models, or contributing to open-source, I strive to deliver impactful results and stay at the forefront of technology.
+        </p>
       </div>
     </div>
   </section>
 
-  <section id="about" class="about">
-    <h2 class="section-title">About Me</h2>
-    <div class="about-content">
-      <p class="about-text">
-        I'm a dedicated Computer Engineering student with a passion for AI/ML technologies and full-stack development. 
-        I love building intelligent systems that solve real-world problems and create meaningful impact. 
-        My journey in tech is driven by curiosity and a constant desire to learn and innovate.
-      </p>
+  <section id="education" class="education">
+    <h2 class="section-title">Education</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3>Marwadi University, Rajkot</h3>
+        <p>B.Tech in Computer Engineering (2022–2026)</p>
+        <p>Current Semester: 7</p>
+        <p>CPI: 9.39 / 10 (till Sem 6)</p>
+      </div>
+      <div class="skill-category">
+        <h3>Mahatma Gandhi Education Campus, Rajkot</h3>
+        <p>Higher Secondary: 81.69%</p>
+        <p>Secondary: 91.16%</p>
+        <p>Years: 2019–2022</p>
+      </div>
     </div>
   </section>
 
@@ -878,11 +899,107 @@
             and health tracking using advanced machine learning models.
           </p>
           <div class="project-links">
-            <a href="https://github.com/niyatisanja0206/Pustak-Pravah" class="project-link">ML Models</a>
+            <a href="https://github.com/niyatisanja0206/Pustak-Pravah" class="project-link">GitHub</a>
           </div>
         </div>
       </div>
 
+      <div class="project-card">
+        <div class="project-image">CV</div>
+        <div class="project-content">
+          <h3 class="project-title">Virtual Trial Room</h3>
+          <p class="project-description">
+            Virtual try-on system using OpenCV and MediaPipe, allowing users to preview clothes using AI.
+          </p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">SE</div>
+        <div class="project-content">
+          <h3 class="project-title">Grocery Store Management</h3>
+          <p class="project-description">
+            Planned mobile app for digital grocery orders and ledger tracking using Flutter & Firebase.
+          </p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">Java Swing</div>
+        <div class="project-content">
+          <h3 class="project-title">Quiz App</h3>
+          <p class="project-description">
+            CRUD desktop quiz application built with Java Swing and MySQL.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/niyatisanja0206/Shashtrarth.git" class="project-link">GitHub</a>
+          </div>
+        </div>
+
+    </div>
+  </section>
+
+  <section id="certifications" class="certifications">
+    <h2 class="section-title">Certifications</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-image"><img src="https://drive.google.com/file/d/1qQZ1LD455pHQ6UCpYowKLO6pZ6rQYZPJ/view"></div>
+        <div class="project-content">
+          <h3 class="project-title">Explore Machine Learning - Infosys</h3>
+          <a href="https://drive.google.com/file/d/1qQZ1LD455pHQ6UCpYowKLO6pZ6rQYZPJ/view" class="project-link">View</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-image">📜</div>
+        <div class="project-content">
+          <h3 class="project-title">AWS Academy Graduate - Data Engineering</h3>
+          <a href="https://drive.google.com/file/d/1TbUIdKrAkTvwr4fCXUgods7QGCh1fBSY/view" class="project-link">View</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-image">📜</div>
+        <div class="project-content">
+          <h3 class="project-title">Explore Machine Learning - Infosys</h3>
+          <a href="https://drive.google.com/file/d/1qQZ1LD455pHQ6UCpYowKLO6pZ6rQYZPJ/view" class="project-link">View</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-image">📜</div>
+        <div class="project-content">
+          <h3 class="project-title">AWS Academy Graduate - Data Engineering</h3>
+          <a href="https://drive.google.com/file/d/1TbUIdKrAkTvwr4fCXUgods7QGCh1fBSY/view" class="project-link">View</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-image">📜</div>
+        <div class="project-content">
+          <h3 class="project-title">Explore Machine Learning - Infosys</h3>
+          <a href="https://drive.google.com/file/d/1qQZ1LD455pHQ6UCpYowKLO6pZ6rQYZPJ/view" class="project-link">View</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-image">📜</div>
+        <div class="project-content">
+          <h3 class="project-title">AWS Academy Graduate - Data Engineering</h3>
+          <a href="https://drive.google.com/file/d/1TbUIdKrAkTvwr4fCXUgods7QGCh1fBSY/view" class="project-link">View</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="experience">
+    <h2 class="section-title">Experience</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3>MERNStack Intern - BrainyBeam</h3>
+        <p>May–June 2024 | Work From Home</p>
+        <p>Built and debugged responsive MERNStack applications.</p>
+      </div>
+      <div class="skill-category">
+        <h3>AI/ML Intern - Karoza Technologies</h3>
+        <p>June 2025 – Present | Hybrid</p>
+        <p>Designed AI-powered bus optimization system using LLMs, GNNs, and OR-Tools.</p>
+      </div>
     </div>
   </section>
 
@@ -890,27 +1007,19 @@
     <h2 class="section-title">Let's Connect</h2>
     <div class="contact-content">
       <div class="social-links">
-        <a href="https://github.com/niyatisanja0206" target="_blank" rel="noopener noreferrer" class="social-link">
+        <a href="https://github.com/niyatisanja0206" target="_blank" class="social-link">
           <span class="social-icon">🐙</span>
           <span>GitHub</span>
         </a>
-        <a href="https://linkedin.com/in/niyati-sanja" target="_blank" rel="noopener noreferrer" class="social-link">
+        <a href="https://linkedin.com/in/niyati-sanja" target="_blank" class="social-link">
           <span class="social-icon">💼</span>
           <span>LinkedIn</span>
         </a>
+        <a href="mailto:niyatisanja@gmail.com" class="social-link">
+          <span class="social-icon">✉️</span>
+          <span>Email Me</span>
+        </a>
       </div>
-      <form class="contact-form">
-        <div class="form-group">
-          <input type="text" class="form-input" placeholder="Your Name" required />
-        </div>
-        <div class="form-group">
-          <input type="email" class="form-input" placeholder="Your Email" required />
-        </div>
-        <div class="form-group">
-          <textarea class="form-input" placeholder="Your Message" required></textarea>
-        </div>
-        <button type="submit" class="submit-btn">Send Message</button>
-      </form>
     </div>
   </section>
 
