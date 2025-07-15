@@ -159,7 +159,7 @@
       margin: 0 auto;
     }
 
-    /* Home Section - Updated Background */
+    /* Home Section */
     .home {
       min-height: 100vh;
       display: flex;
@@ -175,7 +175,7 @@
       margin: 1rem;
       border: 1px solid rgba(255, 255, 255, 0.05);
     }
-
+    
     .home-content {
       position: relative;
       z-index: 2;
@@ -186,8 +186,8 @@
     }
 
     .profile-image {
-      width: 300px;
-      height: 300px;
+      width: 250px;
+      height: 250px;
       border-radius: 50%;
       margin: 0 auto 2rem;
       background: var(--gradient-primary);
@@ -318,7 +318,7 @@
     }
 
     /* About Section */
-    .about-content {
+   .about-content {
       max-width: 800px;
       margin: 0 auto;
       text-align: justify;
@@ -573,61 +573,6 @@
     .social-icon {
       font-size: 1.2rem;
     }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .form-group {
-      position: relative;
-    }
-
-    .form-input {
-      width: 100%;
-      padding: 1rem;
-      background: var(--bg-secondary);
-      border: 2px solid rgba(255, 255, 255, 0.1);
-      border-radius: 15px;
-      color: var(--text-primary);
-      font-size: 1rem;
-      transition: all 0.3s ease;
-    }
-
-    .form-input:focus {
-      outline: none;
-      border-color: var(--accent-primary);
-      box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
-    }
-
-    .form-input::placeholder {
-      color: var(--text-muted);
-    }
-
-    textarea.form-input {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .submit-btn {
-      padding: 1rem 2rem;
-      background: var(--gradient-primary);
-      border: none;
-      border-radius: 50px;
-      color: var(--text-primary);
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .submit-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-primary);
-    }
-
     /* Footer */
     footer {
       background: var(--bg-secondary);
@@ -773,6 +718,7 @@
       <div class="logo">NS</div>
       <nav id="nav">
         <a href="#home">Home</a>
+        <a href="#about">About</a>
         <a href="#education">Education</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
@@ -786,11 +732,11 @@
     </div>
   </header>
 
-  <section class="intro-section" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2rem; padding: 5rem 2rem 3rem;">
+   <section class="intro-section" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2rem; padding: 5rem 2rem 3rem;">
     <div class="home" id="home" style="flex: 1 1 45%; min-width: 300px; text-align: center;">
       <div class="home-content">
         <div class="profile-image">
-          <img src="https://avatars.githubusercontent.com/u/149999123?v=4" alt="Profile" />
+          <img src="https://avatars.githubusercontent.com/u/149999123?s=400&u=855447eca83b580183787002f4c544a3222b9827&v=4" alt="Profile" />
         </div>
         <h1>Niyati Sanja</h1>
         <p class="subtitle">AI/ML Engineer & Full Stack Developer</p>
@@ -915,8 +861,6 @@
           </div>
         </div>
       </div>
-
-      <div class="project-card">
 
       <div class="project-card">
         <div class="project-image">ML</div>
