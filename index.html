@@ -172,7 +172,7 @@
         radial-gradient(circle at 30% 30%, rgba(6, 255, 165, 0.05) 0%, transparent 70%),
         radial-gradient(circle at 70% 70%, rgba(236, 72, 153, 0.03) 0%, transparent 70%);
       border-radius: 20px;
-      margin: 2px;
+      margin: 1px;
       border: 1px solid rgba(255, 255, 255, 0.05);
     }
     
@@ -715,15 +715,14 @@
   
   <header id="header">
     <div class="header-content">
-      <div class="logo">NS</div>
+      <div class="logo"><a href="#home">NS</a></div>
       <nav id="nav">
         <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
-        <a href="#certifications">Certifications</a>
+        <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#certifications">Certifications</a>
         <a href="#contact">Contact</a>
       </nav>
       <div class="mobile-menu" id="mobile-menu">
@@ -756,75 +755,6 @@
           opportunities to implement my knowledge, and develop myself in a dynamic environment. 
           I have a passion for building innovative solutions that make a difference. My journey in tech has been driven by curiosity and a desire to solve real-world problems using AI, ML, and full stack development. I enjoy collaborating with diverse teams, taking on challenging projects, and continuously improving my skills. Whether it's developing intelligent web applications, experimenting with new machine learning models, or contributing to open-source, I strive to deliver impactful results and stay at the forefront of technology.
         </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="education" class="education">
-    <h2 class="section-title">Education</h2>
-    <div class="skills-grid">
-      <div class="skill-category">
-        <h3>Marwadi University, Rajkot</h3>
-        <p>B.Tech in Computer Engineering (2022–2026)</p>
-        <p>Current Semester: 7</p>
-        <p>CPI: 9.39 / 10 (till Sem 6)</p>
-      </div>
-      <div class="skill-category">
-        <h3>Mahatma Gandhi Education Campus, Rajkot</h3>
-        <p>Higher Secondary: 81.69%</p>
-        <p>Secondary: 91.16%</p>
-        <p>Years: 2019–2022</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills" class="skills">
-    <h2 class="section-title">Skills & Expertise</h2>
-    <div class="skills-grid">
-      <div class="skill-category">
-        <h3>Programming Languages</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">C/C++</span>
-          <span class="skill-tag">TypeScript</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h3>AI/ML & Data Science</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">Machine Learning</span>
-          <span class="skill-tag">Deep Learning</span>
-          <span class="skill-tag">Computer Vision</span>
-          <span class="skill-tag">GenAI</span>
-          <span class="skill-tag">TensorFlow</span>
-          <span class="skill-tag">PyTorch</span>
-          <span class="skill-tag">NumPy</span>
-          <span class="skill-tag">Pandas</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h3>Web Development</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">React.js</span>
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">Express.js</span>
-          <span class="skill-tag">MongoDB</span>
-          <span class="skill-tag">HTML/CSS</span>
-          <span class="skill-tag">Bootstrap</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h3>Tools & Platforms</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">Git/GitHub</span>
-          <span class="skill-tag">VS Code</span>
-          <span class="skill-tag">Figma</span>
-          <span class="skill-tag">MySQL</span>
-          <span class="skill-tag">Postman</span>
-          <span class="skill-tag">Streamlit</span>
-          <span class="skill-tag">Azure OpenAI</span>
-        </div>
       </div>
     </div>
   </section>
@@ -897,7 +827,10 @@
         <div class="project-content">
           <h3 class="project-title">Quiz App</h3>
           <p class="project-description">
-            CRUD desktop quiz application built with Java Swing and MySQL.
+            CRUD desktop quiz application built with Java Swing and MySQL. 
+            Using Java Swing for the GUI and MySQL for the database, it allows teacher to create quizes in which he can add, update or delete questions and also create anew quiz. 
+            Student can read same questions and answer them. 
+            Answers are stored to database and teacher can see and evaluate them.
           </p>
           <div class="project-links">
             <a href="https://github.com/niyatisanja0206/Shashtrarth.git" class="project-link">GitHub</a>
@@ -910,7 +843,9 @@
         <div class="project-content">
           <h3 class="project-title">Virtual Trial Room</h3>
           <p class="project-description">
-            Virtual try-on system using OpenCV and MediaPipe, allowing users to preview clothes using AI.
+            Virtual try-on system using OpenCV and MediaPipe, allowing users to preview clothes using Computer vision.
+            Just by uploading an image of yourself, you can see how different clothes would look on you.
+            You can try any dress, shirt, or any clothing item virtually.
           </p>
         </div>
       </div>
@@ -921,6 +856,8 @@
           <h3 class="project-title">Grocery Store Management</h3>
           <p class="project-description">
             Planned mobile app for digital grocery orders and ledger tracking using Flutter & Firebase.
+            This app allows users to order groceries online and keep track of their expenses in a digital ledger.
+            A feature call Hisab Diary allows users to keep track of their expenses and income.
           </p>
         </div>
       </div>
@@ -928,43 +865,52 @@
     </div>
   </section>
 
-  <section id="certifications" class="certifications">
-    <h2 class="section-title">Certifications</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <div class="project-content">
-          <h3 class="project-title">Explore Machine Learning - Infosys</h3>
-          <a href="https://drive.google.com/file/d/1qQZ1LD455pHQ6UCpYowKLO6pZ6rQYZPJ/view" class="project-link">View</a>
+  <section id="skills" class="skills">
+    <h2 class="section-title">Skills & Expertise</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3>Programming Languages</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">C/C++</span>
+          <span class="skill-tag">TypeScript</span>
         </div>
       </div>
-      <div class="project-card">
-        <div class="project-content">
-          <h3 class="project-title">AWS Academy Graduate - Data Engineering</h3>
-          <a href="https://drive.google.com/file/d/1TbUIdKrAkTvwr4fCXUgods7QGCh1fBSY/view" class="project-link">View</a>
+      <div class="skill-category">
+        <h3>AI/ML & Data Science</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Machine Learning</span>
+          <span class="skill-tag">Deep Learning</span>
+          <span class="skill-tag">Computer Vision</span>
+          <span class="skill-tag">GenAI</span>
+          <span class="skill-tag">TensorFlow</span>
+          <span class="skill-tag">PyTorch</span>
+          <span class="skill-tag">NumPy</span>
+          <span class="skill-tag">Pandas</span>
         </div>
       </div>
-      <div class="project-card">
-        <div class="project-content">
-          <h3 class="project-title">Explore Machine Learning - Infosys</h3>
-          <a href="https://drive.google.com/file/d/1qQZ1LD455pHQ6UCpYowKLO6pZ6rQYZPJ/view" class="project-link">View</a>
+      <div class="skill-category">
+        <h3>Web Development</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">React.js</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Express.js</span>
+          <span class="skill-tag">MongoDB</span>
+          <span class="skill-tag">HTML/CSS</span>
+          <span class="skill-tag">Bootstrap</span>
         </div>
       </div>
-      <div class="project-card">
-        <div class="project-content">
-          <h3 class="project-title">AWS Academy Graduate - Data Engineering</h3>
-          <a href="https://drive.google.com/file/d/1TbUIdKrAkTvwr4fCXUgods7QGCh1fBSY/view" class="project-link">View</a>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-content">
-          <h3 class="project-title">Explore Machine Learning - Infosys</h3>
-          <a href="https://drive.google.com/file/d/1qQZ1LD455pHQ6UCpYowKLO6pZ6rQYZPJ/view" class="project-link">View</a>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-content">
-          <h3 class="project-title">AWS Academy Graduate - Data Engineering</h3>
-          <a href="https://drive.google.com/file/d/1TbUIdKrAkTvwr4fCXUgods7QGCh1fBSY/view" class="project-link">View</a>
+      <div class="skill-category">
+        <h3>Tools & Platforms</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Git/GitHub</span>
+          <span class="skill-tag">VS Code</span>
+          <span class="skill-tag">Figma</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">Postman</span>
+          <span class="skill-tag">Streamlit</span>
+          <span class="skill-tag">Azure OpenAI</span>
         </div>
       </div>
     </div>
@@ -981,6 +927,8 @@
            I also learned about RESTApis. 
            It was a great and insightful experience to work on real time project at BrainyBeam technologies.
         </p>
+        <br>
+        <a href="https://drive.google.com/file/d/1cjomH_RfmsCiNkHCRPVAZX_KPpxUzfAl/view?usp=sharing" class="project-link">Certificate of Complition</a>
       </div>
       <div class="skill-category">
         <h3>AI/ML Intern - Karoza Technologies</h3>
@@ -989,10 +937,73 @@
         <p>Here I first worked on route optimization model building a machine learning model which can optimize routes based on distance and bus capacity.
            Then I worked on building a RAG system for admin to get bus details and other details easily.
         </p>
+        <br>
+        <a href="https://drive.google.com/file/d/1TbUIdKrAkTvwr4fCXUgods7QGCh1fBSY/view?usp=sharing" class="project-link">Offer Letter</a>
       </div>
     </div>
   </section>
 
+  <section id="education" class="education">
+    <h2 class="section-title">Education</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3>Marwadi University, Rajkot</h3>
+        <p>B.Tech in Computer Engineering (2022–2026)</p>
+        <p>Current Semester: 7</p>
+        <p>CPI: 9.39 / 10 (till Sem 6)</p>
+      </div>
+      <div class="skill-category">
+        <h3>Mahatma Gandhi Education Campus, Rajkot</h3>
+        <p>Higher Secondary: 81.69%</p>
+        <p>Secondary: 91.16%</p>
+        <p>Years: 2019–2022</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications" class="certifications">
+    <h2 class="section-title">Certifications</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-content">
+          <h3 class="project-title">Explore Machine Learning using Python - Infosys Springboard</h3>
+          <a href="https://drive.google.com/file/d/1iW3Z4xN-tZJmkR8QIrz40qyk2vN2xXym/view?usp=sharing" class="project-link">View</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-content">
+          <h3 class="project-title">AWS Academy Graduate - AWS Academy Data Engineering</h3>
+          <a href="https://drive.google.com/file/d/1QaNeK-W0v5QDhGZa4A-2RdoNWs193ZzE/view?usp=sharing" class="project-link">View</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-content">
+          <h3 class="project-title">Enterprise Data Science in Practice - IBM Academy </h3>
+          <a href="https://drive.google.com/file/d/1z5ivHfR0jMmISSKy8JtncHCLiM7mQq1G/view?usp=sharing" class="project-link">View</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-content">
+          <h3 class="project-title">Analytics using Tableau - Infosys Springboard </h3>
+          <a href="https://drive.google.com/file/d/13WIuaYk4JHzk9uil8YiHSwnIvAVqnIOI/view?usp=sharing" class="project-link">View</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-content">
+          <h3 class="project-title">Database Programming with SQL - ORACLE Academy</h3>
+          <a href="https://drive.google.com/file/d/1JZZ9n7Xe3cxqaZx_WU1T41CQ7EqEn_ZD/view?usp=sharing" class="project-link">View</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-content">
+          <h3 class="project-title">Hotstar Clone using HTML, CSS and JS - AWS Community Builders & Devtown</h3>
+          <a href="https://drive.google.com/file/d/1bXGw-esSTj_ZbyCKeiiiy8r2ca0VeSM7/view?usp=sharing" class="project-link">View</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
   <section id="contact" class="contact">
     <h2 class="section-title">Let's Connect</h2>
     <div class="contact-content">
