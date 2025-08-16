@@ -78,34 +78,53 @@
       line-height: 1.2;
     }
 
-    /* Theme Toggle */
+    /* === MODIFICATION START: NEW THEME TOGGLE CSS === */
     .theme-toggle {
+      width: 50px;
+      height: 26px;
+      padding: 3px;
       background: var(--bg-tertiary);
-      border: 2px solid var(--border-primary);
+      border: 1px solid var(--border-primary);
       border-radius: 25px;
-      padding: 0.375rem;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: var(--shadow-sm);
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    [data-theme="dark"] .theme-toggle {
+        background: var(--accent-primary);
     }
 
     .theme-toggle:hover {
-      transform: scale(1.05);
-      box-shadow: var(--shadow-md);
+      box-shadow: 0 0 8px -2px var(--accent-primary);
     }
 
     .theme-toggle-inner {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--bg-secondary);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      position: absolute;
+      left: 3px;
       display: flex;
       align-items: center;
-      gap: 0.375rem;
-      padding: 0.375rem 0.75rem;
-      border-radius: 20px;
-      background: var(--accent-primary);
-      color: white;
-      font-size: 0.85rem;
-      font-weight: 500;
-      transition: all 0.3s ease;
+      justify-content: center;
     }
+
+    [data-theme="dark"] .theme-toggle-inner {
+      transform: translateX(24px);
+    }
+
+    #theme-icon {
+        font-size: 14px;
+        line-height: 1;
+    }
+    /* === MODIFICATION END === */
+
 
     /* Header */
     header {
@@ -410,12 +429,10 @@
       transition: all 0.3s ease;
     }
 
-    /* === MODIFICATION START === */
     [data-theme="dark"] .skill-tag {
       background: var(--bg-accent);
       border-color: var(--border-secondary);
     }
-    /* === MODIFICATION END === */
 
     .skill-tag:hover {
       background: var(--accent-primary);
@@ -804,7 +821,7 @@
               <span id="theme-icon">🌙</span>
             </div>
           </div>
-        </div>
+          </div>
         <div class="mobile-menu" id="mobile-menu">
           <span></span><span></span><span></span>
         </div>
@@ -1195,7 +1212,6 @@
     // Theme Toggle Functionality
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
-    const themeText = document.getElementById('theme-text');
     const body = document.body;
 
     // Check for saved theme preference or default to 'light'
@@ -1212,15 +1228,15 @@
       updateThemeToggle(newTheme);
     });
 
+    // === MODIFICATION START: UPDATED THEME TOGGLE JS ===
     function updateThemeToggle(theme) {
       if (theme === 'dark') {
         themeIcon.textContent = '☀️';
-        themeText.textContent = 'Light';
       } else {
         themeIcon.textContent = '🌙';
-        themeText.textContent = 'Dark';
       }
     }
+    // === MODIFICATION END ===
 
     // Remove loading state
     document.body.classList.remove('loading');
