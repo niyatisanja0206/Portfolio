@@ -211,6 +211,10 @@
       align-items: center;
       justify-content: center;
       padding: 8rem 0 4rem;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 25%, var(--bg-tertiary) 100%);
+    }
+
+    [data-theme="dark"] .hero {
       background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%);
     }
 
@@ -362,6 +366,17 @@
       border: 1px solid var(--border-primary);
       transition: all 0.3s ease;
       box-shadow: var(--shadow-sm);
+    }
+
+    /* Lighter styling for skills section in light theme */
+    :root .skill-category {
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-accent) 100%);
+      border: 1px solid var(--border-secondary);
+    }
+
+    :root .skill-tag {
+      background: linear-gradient(135deg, var(--bg-tertiary) 0%, #f8fafc 100%);
+      border: 1px solid var(--border-primary);
     }
 
     .skill-category:hover {
@@ -526,6 +541,15 @@
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1.5rem;
       margin-top: 3rem;
+    }
+
+    /* For laptop screens and above, show all contacts in one line */
+    @media (min-width: 1024px) {
+      .social-links {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 800px;
+        margin: 3rem auto 0;
+      }
     }
 
     .social-link {
