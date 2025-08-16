@@ -9,6 +9,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
     :root {
+      /* Light theme variables */
       --bg-primary: #fafafa;
       --bg-secondary: #ffffff;
       --bg-tertiary: #f5f7fa;
@@ -31,6 +32,30 @@
       --gradient-secondary: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
     }
 
+    [data-theme="dark"] {
+      /* Dark theme variables */
+      --bg-primary: #0f0f23;
+      --bg-secondary: #1a1a2e;
+      --bg-tertiary: #16213e;
+      --bg-accent: #0e3460;
+      --accent-primary: #60a5fa;
+      --accent-secondary: #3b82f6;
+      --accent-tertiary: #06b6d4;
+      --accent-success: #10b981;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --text-light: #64748b;
+      --border-primary: #334155;
+      --border-secondary: #475569;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+      --gradient-primary: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+      --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #60a5fa 100%);
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -43,6 +68,7 @@
       color: var(--text-primary);
       line-height: 1.6;
       overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     /* Typography */
@@ -52,12 +78,46 @@
       line-height: 1.2;
     }
 
+    /* Theme Toggle */
+    .theme-toggle {
+      position: fixed;
+      top: 50%;
+      right: 2rem;
+      transform: translateY(-50%);
+      z-index: 1001;
+      background: var(--bg-secondary);
+      border: 2px solid var(--border-primary);
+      border-radius: 50px;
+      padding: 0.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-md);
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .theme-toggle-inner {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      background: var(--accent-primary);
+      color: white;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
     /* Header */
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(250, 250, 250, 0.95);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border-primary);
       z-index: 1000;
@@ -65,8 +125,11 @@
       transition: all 0.3s ease;
     }
 
+    [data-theme="dark"] header {
+      background: rgba(15, 15, 35, 0.95);
+    }
+
     header.scrolled {
-      background: rgba(255, 255, 255, 0.98);
       box-shadow: var(--shadow-md);
     }
 
@@ -147,7 +210,7 @@
       align-items: center;
       justify-content: center;
       padding: 8rem 0 4rem;
-      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%);
     }
 
     .hero-content {
@@ -203,7 +266,11 @@
 
     .profile-image:hover {
       transform: scale(1.02);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.3);
+    }
+
+    [data-theme="dark"] .profile-image:hover {
+      box-shadow: 0 25px 50px -12px rgba(96, 165, 250, 0.4);
     }
 
     .profile-image img {
@@ -278,55 +345,10 @@
       margin: 0 auto;
     }
 
-    /* About Section */
-    .about {
-      background: var(--bg-secondary);
-    }
-
-    .about-content {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .about-text {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: var(--text-secondary);
-      text-align: justify;
-    }
-
-    .stats-grid {
-      display: grid;
-      gap: 2rem;
-    }
-
-    .stat-item {
-      text-align: center;
-      padding: 1.5rem;
-      background: var(--bg-tertiary);
-      border-radius: 8px;
-      border: 1px solid var(--border-primary);
-    }
-
-    .stat-number {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--accent-primary);
-      display: block;
-    }
-
-    .stat-label {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    /* Skills Section */
+    /* Skills Section - One Row Layout for Desktop */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
     }
 
@@ -341,6 +363,7 @@
     .skill-category:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow-lg);
+      border-color: var(--accent-primary);
     }
 
     .skill-category h3 {
@@ -370,6 +393,7 @@
       background: var(--accent-primary);
       color: white;
       transform: translateY(-1px);
+      box-shadow: var(--shadow-sm);
     }
 
     /* Projects Section */
@@ -390,6 +414,7 @@
     .project-card:hover {
       transform: translateY(-8px);
       box-shadow: var(--shadow-xl);
+      border-color: var(--accent-primary);
     }
 
     .project-image {
@@ -441,6 +466,7 @@
     .project-link:hover {
       background: var(--accent-secondary);
       transform: translateY(-1px);
+      box-shadow: var(--shadow-sm);
     }
 
     /* Experience & Education */
@@ -456,6 +482,7 @@
     .timeline-item:hover {
       box-shadow: var(--shadow-md);
       transform: translateY(-2px);
+      border-color: var(--accent-primary);
     }
 
     .timeline-item h3 {
@@ -530,6 +557,11 @@
       text-align: center;
     }
 
+    [data-theme="dark"] footer {
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+    }
+
     /* Scroll to Top */
     .scroll-top {
       position: fixed;
@@ -561,23 +593,55 @@
       box-shadow: var(--shadow-lg);
     }
 
+    /* Badge */
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background: var(--accent-primary);
+      color: white;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
     /* Responsive Design */
+    @media (max-width: 1200px) {
+      .theme-toggle {
+        right: 1rem;
+      }
+    }
+
     @media (max-width: 1024px) {
       .hero-content {
         gap: 2rem;
       }
 
-      .about-content {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-
-      .stats-grid {
+      .skills-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
     @media (max-width: 768px) {
+      .theme-toggle {
+        position: static;
+        transform: none;
+        order: 3;
+        margin-left: 1rem;
+      }
+
+      .theme-toggle-inner {
+        padding: 0.375rem 0.75rem;
+        font-size: 0.8rem;
+      }
+
+      .header-content {
+        position: relative;
+      }
+
       .container {
         padding: 0 1rem;
       }
@@ -621,7 +685,10 @@
         margin-bottom: 2rem;
       }
 
-      .skills-grid,
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
       .projects-grid {
         grid-template-columns: 1fr;
       }
@@ -647,13 +714,14 @@
         margin: 0 -0.5rem;
       }
 
-      .stats-grid {
-        grid-template-columns: 1fr;
-      }
-
       .project-links,
       .cta-buttons {
         flex-direction: column;
+      }
+
+      .theme-toggle-inner {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
       }
     }
 
@@ -682,45 +750,28 @@
     body.loading {
       opacity: 0;
     }
-
-    /* Professional Enhancements */
-    .highlight {
-      background: linear-gradient(120deg, transparent 0%, rgba(37, 99, 235, 0.1) 50%, transparent 100%);
-      padding: 0.25rem 0;
-    }
-
-    .divider {
-      height: 1px;
-      background: var(--border-primary);
-      margin: 2rem 0;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 0.25rem 0.75rem;
-      background: var(--accent-primary);
-      color: white;
-      border-radius: 12px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
   </style>
 </head>
 
 <body>
+  <div class="theme-toggle" id="theme-toggle">
+    <div class="theme-toggle-inner">
+      <span id="theme-icon">🌙</span>
+      <span id="theme-text">Dark</span>
+    </div>
+  </div>
+
   <header id="header">
     <div class="container">
       <div class="header-content">
         <a href="#home" class="logo">NS</a>
         <nav id="nav">
           <a href="#home" class="active">Home</a>
-          <a href="#about">About</a>
           <a href="#projects">Projects</a>
           <a href="#skills">Skills</a>
           <a href="#experience">Experience</a>
           <a href="#education">Education</a>
+          <a href="#certifications">Certifications</a>
           <a href="#contact">Contact</a>
         </nav>
         <div class="mobile-menu" id="mobile-menu">
@@ -739,7 +790,8 @@
           <p class="description">
             Dedicated final year B.Tech Computer Engineering student with a strong foundation in web development 
             and keen interest in Machine Learning and Artificial Intelligence. Passionate about creating intelligent 
-            solutions that make a meaningful impact.
+            solutions that make a meaningful impact. Always enthusiastic to learn new technologies and looking for 
+            opportunities to implement knowledge in dynamic environments.
           </p>
           <div class="cta-buttons">
             <a href="#projects" class="btn btn-primary">View My Work</a>
@@ -749,49 +801,6 @@
         <div class="hero-image">
           <div class="profile-image">
             <img src="https://avatars.githubusercontent.com/u/149999123?s=400&u=855447eca83b580183787002f4c544a3222b9827&v=4" alt="Niyati Sanja" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="about" id="about">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">About Me</h2>
-        <p class="section-subtitle">
-          Passionate about building innovative solutions with AI, ML, and full stack development
-        </p>
-      </div>
-      <div class="about-content">
-        <div class="about-text">
-          <p>
-            I am a dedicated and proactive final year B.Tech Computer Engineering student with a strong foundation 
-            in web development and keen interest in Machine Learning and Artificial Intelligence. I am always 
-            enthusiastic to learn new technologies and looking for opportunities to implement my knowledge in a 
-            dynamic environment.
-          </p>
-          <br>
-          <p>
-            My journey in technology has been driven by curiosity and a desire to solve real-world problems using 
-            AI, ML, and full stack development. I enjoy collaborating with diverse teams, taking on challenging 
-            projects, and continuously improving my skills. Whether it's developing intelligent web applications, 
-            experimenting with new machine learning models, or contributing to open-source projects, I strive to 
-            deliver impactful results.
-          </p>
-        </div>
-        <div class="stats-grid">
-          <div class="stat-item">
-            <span class="stat-number">9.39</span>
-            <span class="stat-label">Current CPI</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">7+</span>
-            <span class="stat-label">Projects Completed</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">6+</span>
-            <span class="stat-label">Certifications</span>
           </div>
         </div>
       </div>
@@ -1152,6 +1161,36 @@
   </div>
 
   <script>
+    // Theme Toggle Functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const themeText = document.getElementById('theme-text');
+    const body = document.body;
+
+    // Check for saved theme preference or default to 'light'
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    body.setAttribute('data-theme', savedTheme);
+    updateThemeToggle(savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      body.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeToggle(newTheme);
+    });
+
+    function updateThemeToggle(theme) {
+      if (theme === 'dark') {
+        themeIcon.textContent = '☀️';
+        themeText.textContent = 'Light';
+      } else {
+        themeIcon.textContent = '🌙';
+        themeText.textContent = 'Dark';
+      }
+    }
+
     // Remove loading state
     document.body.classList.remove('loading');
 
@@ -1230,7 +1269,7 @@
         nav.style.top = '100%';
         nav.style.left = '0';
         nav.style.width = '100%';
-        nav.style.background = 'rgba(255, 255, 255, 0.98)';
+        nav.style.background = 'var(--bg-secondary)';
         nav.style.padding = '1rem';
         nav.style.backdropFilter = 'blur(20px)';
         nav.style.borderTop = '1px solid var(--border-primary)';
@@ -1288,7 +1327,7 @@
       observer.observe(el);
     });
 
-    // Add some professional interactions
+    // Add professional interactions
     document.querySelectorAll('.skill-tag').forEach(tag => {
       tag.addEventListener('mouseenter', () => {
         tag.style.transform = 'translateY(-2px)';
