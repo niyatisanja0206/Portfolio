@@ -747,7 +747,7 @@
                 <a href="#contact">Contact</a>
             </nav>
             <!-- THEME TOGGLE BUTTON (UPDATED ICONS) -->
-            <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+            <button class="theme-toggle" title="Toggle theme">
               <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
               </svg>
@@ -772,6 +772,14 @@
     <a href="#education">Education</a>
     <a href="#certifications">Certifications</a>
     <a href="#contact">Contact</a>
+    <button class="theme-toggle" title="Toggle theme" style="margin-top: 1.5rem; transform: scale(1.5);">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+        </svg>
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+        </svg>
+    </button>
   </nav>
 
   <section class="hero" id="home">
@@ -1221,7 +1229,7 @@
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
   <script>
-    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggles = document.querySelectorAll('.theme-toggle');
     const body = document.body;
     const header = document.getElementById('header');
 
@@ -1243,19 +1251,23 @@
     }
     updateHeaderBackground(); // Set initial header background
 
-    themeToggle.addEventListener('click', () => {
-        body.classList.toggle('light-theme');
-        
-        // Save the user's preference
-        if (body.classList.contains('light-theme')) {
-            localStorage.setItem('theme', 'light-theme');
-        } else {
-            localStorage.removeItem('theme');
-        }
-        
-        // Instantly update header background on toggle
-        updateHeaderBackground();
+    themeToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+          body.classList.toggle('light-theme');
+          
+          // Save the user's preference
+          if (body.classList.contains('light-theme')) {
+              localStorage.setItem('theme', 'light-theme');
+          } else {
+              localStorage.removeItem('theme');
+          }
+          
+          // Instantly update header background on toggle
+          updateHeaderBackground();
+          initParticles(); // Re-initialize particles on theme change
+      });
     });
+
 
     // Particles.js Configuration for all sections
     const baseParticlesConfig = {
@@ -1284,6 +1296,7 @@
     }
     
     function initParticles() {
+        if(typeof particlesJS === 'undefined') return;
         particlesJS('particles-hero', createParticleConfig({ density: 80 }));
         particlesJS('particles-projects', createParticleConfig({ density: 40 }));
         particlesJS('particles-skills', createParticleConfig({ shape: 'triangle', density: 30 }));
@@ -1295,10 +1308,6 @@
     
     // Initialize particles on load
     initParticles();
-    
-    // Re-initialize particles on theme change
-    themeToggle.addEventListener('click', initParticles);
-
 
     // Header scroll effect
     window.addEventListener('scroll', updateHeaderBackground);
@@ -1357,8 +1366,18 @@
             mobileNav.classList.remove('open');
         });
     });
+    
+    // Also add a listener for the mobile theme toggle to close the menu
+    const mobileThemeToggle = document.querySelector('#mobile-nav .theme-toggle');
+    if(mobileThemeToggle) {
+        mobileThemeToggle.addEventListener('click', () => {
+            // Optional: close the menu after toggling theme, might be better UX
+            // mobileNav.classList.remove('open');
+        });
+    }
 
   </script>
 </body>
 
 </html>
+
